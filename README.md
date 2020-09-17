@@ -9,7 +9,7 @@ This instruction will tell you:
 - [How to take advantage of Sockeye](#ubc-sockeye-server)
 ## Interference Management Project
 To be continued
-## C++ source files
+## CPP source files
 
 ## Matlab source files
 ## UBC Sockeye Server
