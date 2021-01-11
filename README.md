@@ -165,8 +165,47 @@ Generate LDPC code ---> Treat Interference as Noise ---> P2P SWCM ---> 2-user SW
 
 ##### Make file
 
+```makefile
+ldpc_gen:
+	g++ `itpp-config --cflags` -o ldpc_gen ldpc_gen.cpp `itpp-config --libs`
+
+ldpc_simulation:
+	g++ `itpp-config --cflags` -o ldpc_simulation LDPC_simulation.cpp `itpp-config --libs`
+
+ldpc_gen_test:
+	g++ `itpp-config --cflags` -o ldpc_gen_test ldpc_gen_test.cpp `itpp-config --libs`
+
+ldpc_simu_test:
+	rm -rf ldpc_simu_test
+	g++ `itpp-config --cflags` -o ldpc_simu_test ldpc_simu_test.cpp `itpp-config --libs`
+
+ldpc_gen_regular:
+	g++ `itpp-config --cflags` -o ldpc_gen_regular ldpc_gen_regular.cpp `itpp-config --libs`
+test:
+	
+	g++ `itpp-config --cflags` -o test test.cpp `itpp-config --libs`
+
+SWSC:
+	g++ -c -g SWSC.cpp
+	g++ -c -g SWSC_LDPC_SIMU.cpp
+	g++ `itpp-config --cflags` -o SWSC SWSC.o SWSC_LDPC_SIMU.o `itpp-config --libs`
+IAN:
+	g++ `itpp-config --cflags` -o IAN IAN_LDPC_SIMU.cpp `itpp-config --libs`
+
+# SWSC:
+# 	g++ `itpp-config --cflags` -o SWSC SWSC.cpp `itpp-config --libs`
+```
+
+
+
 ## Matlab source files
 
-Most of the 
+Most of the MATLAB based simulation follow the same process but different functions compared with C++ files. Unlike C++ file, MATLAB file is easy to compile. Since this README file is run as a specification of how to compile and run these source files, I don't waste much explanation here for the MATLAB source file.
+
+You can find how we do simulation either from the annotation in the source files or in my report.
 
 ## UBC Sockeye Server
+
+[Here](https://confluence.it.ubc.ca/display/UARC) is the user manual for UBC Sockeye Server.
+
+As the simulation scaling up, we may use this powerful server to run our source files. Yet, we haven't gone  that far.
