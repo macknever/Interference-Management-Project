@@ -202,7 +202,7 @@ IAN:
 
 Most of the MATLAB based simulation follow the same process but different functions compared with C++ files. Unlike C++ file, MATLAB file is easy to compile. Since this README file is run as a specification of how to compile and run these source files, I don't waste much explanation here for the MATLAB source file.
 
-You can find how we do simulation either from the annotation in the source files or in my report.
+You can find how we do simulation either from the annotation in the source files or in my [report](https://github.com/macknever/Interference-Management-Project/blob/master/Interference%20Management%20for%205G%20Networks.pdf).
 
 ## UBC Sockeye Server
 
